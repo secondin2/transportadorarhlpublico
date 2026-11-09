@@ -42,14 +42,29 @@ Início · Números · Sobre (missão e visão) · Serviços · Diferenciais · 
 
 ## Publicação
 
-**No ar em:** https://secondin2.github.io/transportadorarhlpublico/
+### Firebase Hosting (produção)
 
-Publicado via GitHub Pages a partir da branch `main` (pasta raiz) do repositório
-`secondin2/transportadorarhlpublico`. Para atualizar o site, basta commitar e dar `git push`;
-o GitHub republica em 1 a 3 minutos.
+**No ar em:** https://www.transportadorarhl.com.br (projeto Firebase `transportadora-rhl`, conta gustavosecondin@gmail.com)
 
-Para apontar o domínio `transportadorarhl.com.br`: em Settings → Pages → Custom domain, informe o domínio
-e crie no DNS um registro CNAME de `www` para `secondin2.github.io`.
+Endereços: `www.transportadorarhl.com.br` é o site; `transportadorarhl.com.br` redireciona para o `www`;
+`transportadora-rhl.web.app` é o endereço padrão do Firebase. DNS na Locaweb: `www` CNAME → `transportadora-rhl.web.app`,
+raiz A → `199.36.158.100` e TXT `hosting-site=transportadora-rhl`.
+
+Para publicar uma nova versão, na pasta do projeto:
+
+```bash
+firebase deploy --only hosting
+```
+
+A configuração está em `firebase.json` (pasta raiz como `public`, com `.git`, `.claude`, `README.md` e `CNAME` excluídos) e o projeto em `.firebaserc`.
+Domínio personalizado: Firebase Console → Hosting → Domínios personalizados. O DNS fica na Locaweb (`ns1/ns2/ns3.locaweb.com.br`).
+
+### GitHub Pages (espelho)
+
+O repositório `secondin2/transportadorarhlpublico` também publica em https://secondin2.github.io/transportadorarhlpublico/ a cada push na `main`.
+O domínio `www.transportadorarhl.com.br` não pôde ser vinculado ao GitHub Pages porque continua reivindicado pelo
+repositório antigo `transportadorarh/transportadorarhl` (outra conta), mesmo com o domínio verificado na conta `secondin2`.
+Por isso a produção está no Firebase. O arquivo `CNAME` foi mantido para o caso de o domínio ser liberado no futuro.
 
 É um site 100% estático e também funciona em qualquer outra hospedagem (Hostinger, HostGator, cPanel, Netlify, Vercel, Cloudflare Pages). Não precisa de PHP nem banco de dados.
 
