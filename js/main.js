@@ -49,9 +49,9 @@
   toggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   $$('a', nav).forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-  document.addEventListener('click', (e) => {
-    if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) setMenu(false);
-  });
+  const backdrop = $('.nav-backdrop');
+  if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+  window.addEventListener('resize', () => { if (window.innerWidth > 1024) setMenu(false); });
 
   /* ---------- Link ativo no menu ---------- */
   const navLinks = $$('.nav a[href^="#"]').filter((a) => a.getAttribute('href').length > 1);
