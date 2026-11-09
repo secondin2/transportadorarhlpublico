@@ -42,7 +42,16 @@ Início · Números · Sobre (missão e visão) · Serviços · Diferenciais · 
 
 ## Publicação
 
-É um site 100% estático: basta enviar os arquivos para qualquer hospedagem (Hostinger, HostGator, cPanel, Netlify, Vercel, GitHub Pages, Cloudflare Pages). Não precisa de PHP nem banco de dados.
+**No ar em:** https://secondin2.github.io/transportadorarhlpublico/
+
+Publicado via GitHub Pages a partir da branch `main` (pasta raiz) do repositório
+`secondin2/transportadorarhlpublico`. Para atualizar o site, basta commitar e dar `git push`;
+o GitHub republica em 1 a 3 minutos.
+
+Para apontar o domínio `transportadorarhl.com.br`: em Settings → Pages → Custom domain, informe o domínio
+e crie no DNS um registro CNAME de `www` para `secondin2.github.io`.
+
+É um site 100% estático e também funciona em qualquer outra hospedagem (Hostinger, HostGator, cPanel, Netlify, Vercel, Cloudflare Pages). Não precisa de PHP nem banco de dados.
 
 ## Rodar localmente
 
